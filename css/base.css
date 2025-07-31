@@ -1,0 +1,163 @@
+/* CSS Variables for Portfolio Theme */
+:root {
+    --portfolio-primary: #8b5cf6;
+    --portfolio-secondary: #1e1e2e;
+    --portfolio-accent: #a855f7;
+    --portfolio-success: #c084fc;
+    --portfolio-text-primary: #ffffff;
+    --portfolio-text-secondary: #e2e8f0;
+    --portfolio-neon: #d946ef;
+    --background: #0f0f1a;
+    --card: #1e1e2e;
+    --card-foreground: #ffffff;
+    --border: #4c1d95;
+    --input: #312e81;
+    --muted: #1e1b3a;
+    --muted-foreground: #cbd5e1;
+    --radius: 8px;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--background);
+    color: var(--portfolio-text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Background Pattern */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 25% 25%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(217, 70, 239, 0.08) 0%, transparent 50%);
+    z-index: -2;
+}
+
+/* Section Styles */
+.section {
+    min-height: 100vh;
+    padding: 8rem 2rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.section-content {
+    width: 100%;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--portfolio-accent), var(--portfolio-neon));
+    border-radius: 2px;
+}
+
+/* Button Styles */
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--portfolio-primary), var(--portfolio-accent));
+    color: var(--portfolio-text-primary);
+    box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 102, 255, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--portfolio-neon);
+    border: 2px solid var(--portfolio-neon);
+}
+
+.btn-secondary:hover {
+    background: var(--portfolio-neon);
+    color: var(--background);
+    box-shadow: 0 0 20px var(--portfolio-neon);
+}
+
+/* Footer Styles */
+.footer {
+    background: var(--card);
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-text p {
+    color: var(--portfolio-text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: var(--portfolio-text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--portfolio-neon);
+}
