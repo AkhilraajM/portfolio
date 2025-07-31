@@ -47,6 +47,8 @@ class AnimationController {
             .timeline-item,
             .project-card,
             .skill-item,
+            .education-card,
+            .certification-card,
             .contact-item,
             .stat-item
         `);

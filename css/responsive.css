@@ -60,6 +60,16 @@
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+    
+    .education-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .certifications-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
 }
 
 /* Small Screens (768px and down) */
@@ -220,6 +230,24 @@
         padding: 1.5rem;
     }
     
+    .education-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .education-card {
+        padding: 1.5rem;
+    }
+    
+    .certifications-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .certification-card {
+        padding: 1.5rem;
+    }
+    
     .footer-content {
         flex-direction: column;
         text-align: center;
@@ -270,6 +298,14 @@
     }
     
     .contact-form-container {
+        padding: 1rem;
+    }
+    
+    .education-card {
+        padding: 1rem;
+    }
+    
+    .certification-card {
         padding: 1rem;
     }
     

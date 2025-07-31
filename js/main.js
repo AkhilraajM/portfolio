@@ -147,7 +147,7 @@ function initScrollEffects() {
     }, observerOptions);
     
     // Observe elements for scroll animations
-    const elementsToObserve = document.querySelectorAll('.timeline-item, .project-card, .stat-item, .skills-category, .contact-item');
+    const elementsToObserve = document.querySelectorAll('.timeline-item, .project-card, .stat-item, .skills-category, .education-card, .certification-card, .contact-item');
     elementsToObserve.forEach(element => {
         element.classList.add('scroll-reveal');
         observer.observe(element);

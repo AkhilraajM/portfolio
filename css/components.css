@@ -651,3 +651,96 @@
     resize: vertical;
     min-height: 120px;
 }
+
+/* Education Section */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.education-card {
+    background: var(--card);
+    padding: 2rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 212, 170, 0.2);
+}
+
+.education-degree {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--portfolio-neon);
+    margin-bottom: 0.5rem;
+}
+
+.education-school {
+    color: var(--portfolio-accent);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.education-date {
+    color: var(--portfolio-text-secondary);
+    font-size: 0.9rem;
+}
+
+.education-percentage {
+    color: var(--portfolio-neon);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+/* Certifications Section */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.certification-card {
+    background: var(--card);
+    padding: 2rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.certification-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(168, 85, 247, 0.2);
+}
+
+.certification-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--portfolio-accent), var(--portfolio-neon));
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.certification-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--portfolio-neon);
+    margin-bottom: 0.5rem;
+}
+
+.certification-issuer {
+    color: var(--portfolio-text-secondary);
+    font-size: 0.9rem;
+}
