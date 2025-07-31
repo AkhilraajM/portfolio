@@ -1261,19 +1261,19 @@
                     </p>
                     <div class="stats-grid">
                         <div class="stat-item animate-on-scroll">
-                            <span class="stat-number" data-count="7">0</span>
+                            <span class="stat-number" data-target="7">0</span>
                             <span class="stat-label">Years Experience</span>
                         </div>
                         <div class="stat-item animate-on-scroll">
-                            <span class="stat-number" data-count="8">0</span>
+                            <span class="stat-number" data-target="10">0</span>
                             <span class="stat-label">Major Projects</span>
                         </div>
                         <div class="stat-item animate-on-scroll">
-                            <span class="stat-number" data-count="15">0</span>
+                            <span class="stat-number" data-target="15">0</span>
                             <span class="stat-label">Technologies Mastered</span>
                         </div>
                         <div class="stat-item animate-on-scroll">
-                            <span class="stat-number" data-count="4">0</span>
+                            <span class="stat-number" data-target="4">0</span>
                             <span class="stat-label">Industry Awards</span>
                         </div>
                     </div>
@@ -1918,15 +1918,17 @@
                     if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
                         entry.target.classList.add('animated');
                         const target = parseInt(entry.target.getAttribute('data-target'));
+                        if (isNaN(target)) return; // Safety check
+                        
                         let current = 0;
                         const increment = target / 50;
                         const timer = setInterval(() => {
                             current += increment;
                             if (current >= target) {
-                                entry.target.textContent = target + '+';
+                                entry.target.textContent = target;
                                 clearInterval(timer);
                             } else {
-                                entry.target.textContent = Math.floor(current) + '+';
+                                entry.target.textContent = Math.floor(current);
                             }
                         }, 30);
                     }
