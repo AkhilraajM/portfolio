@@ -228,6 +228,63 @@
     z-index: 1;
 }
 
+/* Company Header Styles */
+.company-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.company-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background: var(--card);
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.company-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.company-logo i {
+    color: var(--portfolio-neon);
+    font-size: 1.5rem;
+}
+
+.company-details {
+    flex: 1;
+}
+
+.timeline-date {
+    color: var(--portfolio-neon);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.timeline-title {
+    color: var(--portfolio-text-primary);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.timeline-company {
+    color: var(--portfolio-text-secondary);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
 .timeline-item {
     position: relative;
     margin: 3rem 0;
@@ -743,4 +800,75 @@
 .certification-issuer {
     color: var(--portfolio-text-secondary);
     font-size: 0.9rem;
+}
+
+/* Skills Icons Grid */
+.skills-icons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem;
+}
+
+.skill-icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    background: var(--card);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.skill-icon-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--portfolio-neon);
+    box-shadow: 0 10px 25px rgba(217, 70, 239, 0.2);
+}
+
+.skill-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: var(--portfolio-neon);
+    transition: all 0.3s ease;
+}
+
+.skill-icon-item:hover .skill-icon {
+    background: var(--portfolio-neon);
+    color: var(--background);
+    transform: scale(1.1);
+}
+
+.skill-icon-item .skill-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Success Message */
+.success-message {
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid var(--portfolio-success);
+    color: var(--portfolio-success);
+    padding: 1rem;
+    border-radius: var(--radius);
+    margin-top: 1rem;
+    display: none;
+}
+
+/* Ensure icons display properly */
+i[class*="fa-"] {
+    display: inline-block;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
