@@ -226,28 +226,38 @@ function animateCounter(element, target) {
 function initializeContactForm() {
     const contactForm = document.getElementById('contactForm');
     const successMessage = document.getElementById('successMessage');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Simulate form submission
+    const formEndpoint = "https://formspree.io/f/xqalwkdj";
+
+    if (!contactForm) return;
+
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        try {
             const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
-            
-            // Show success message
-            successMessage.style.display = 'block';
-            contactForm.reset();
-            
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                successMessage.style.display = 'none';
-            }, 5000);
-            
-            console.log('Form submitted:', data);
-        });
-    }
+            const response = await fetch(formEndpoint, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                successMessage.style.display = 'block';
+                contactForm.reset();
+                setTimeout(() => successMessage.style.display = 'none', 5000);
+            } else {
+                alert('Oops! Something went wrong. Please try again.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Error sending message.');
+        }
+    });
 }
+
+document.addEventListener('DOMContentLoaded', initializeContactForm);
+
+
 
 // Mobile Menu
 function initializeMobileMenu() {
